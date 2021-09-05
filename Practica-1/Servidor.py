@@ -12,6 +12,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as TCPServerSocket:
     Client_conn, Client_addr = TCPServerSocket.accept()
     with Client_conn:
         print("Conectado a", Client_addr)
+        dificultad = input("Elija la difucltad del juego: ")
         while True:
             print("Esperando a recibir datos... ")
             data = Client_conn.recv(buffer_size)

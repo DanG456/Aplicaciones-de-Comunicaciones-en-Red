@@ -27,54 +27,20 @@ def obtenerEdad():
     else:
         print("Error")
 
-#Funcion para mostrar el puerto a conectarse del campo entry
-#def pedirPuerto():
-  #  print("El puerto seleccionado es: " + entryP.get())
- #   PORT = int(entryP.get())
-
-#Funcion para iniciar el proceso de comunicación de forma cliente
-def cliente():
-    HOST = str(entryD.get())
-    PORT = int(entryP.get())
-    print("La direccion seleccionada es: " + HOST)
-    print("El puerto seleccionado es: " + PORT)
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as TCPClientSocket:
-        TCPClientSocket.connect((HOST, PORT))
-        print("Enviando mensaje...")
-        TCPClientSocket.sendall(b"Hello TCP server")
-        print("Esperando una respuesta...")
-        data = TCPClientSocket.recv(buffer_size)
-        print("Recibido,", repr(data), " de", TCPClientSocket.getpeername())
-
 obtenerEdad()
 
-#Crear ventana para pedir datos con tkinter para recopilar Direccion del socket
-rootD = tk.Tk()
-rootD.config(width=300, height=200)
-labelD = Label(rootD, text = "Ingresa la dirección del servidor al que te quieres conectar")
-labelD.grid(column = 0,row = 0)
-#Poner botones para enviar el dato
-enviar_datoD =ttk.Button(text = "Enviar", command = cliente)
-enviar_datoD.place(x = 100, y = 100)
-# Crear caja de texto.
-entryD = ttk.Entry(rootD)
-# Posicionarla en la ventana.
-entryD.place(x=50, y=50)
+#
+HOST = input("Ingresa la direccion a la que te quieres conectar")
+PORT = input("Ingresa el puerto al que te quieres conectar")
+print("La direccion seleccionada es: " + HOST)
+print("El puerto seleccionado es: " + PORT)
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as TCPClientSocket:
+    TCPClientSocket.connect((HOST, int(PORT)))
+    print("Enviando mensaje...")
+    TCPClientSocket.sendall(b"1")
+    print("Esperando una respuesta...")
+    data = TCPClientSocket.recv(buffer_size)
+    print("Recibido,", repr(data), " de", TCPClientSocket.getpeername())
 
-rootD.mainloop()
 
-#Crear ventana para pedir datos con tkinter para recopilar Puerto del socket
-rootP = tk.Tk()
-rootP.config(width=300, height=200)
-labelP = Label(rootP, text = "Ingresa el puerto al que te quieres conectar")
-labelP.grid(column = 0, row = 0)
-#Poner botones para enviar el dato
-enviar_datoP =ttk.Button(text = "Enviar", command = cliente)
-enviar_datoP.place(x = 100, y = 100)
-# Crear caja de texto.
-entryP = ttk.Entry(rootP)
-# Posicionarla en la ventana.
-entryP.place(x=50, y=50)
-
-rootP.mainloop()
 

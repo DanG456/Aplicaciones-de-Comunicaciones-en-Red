@@ -1,7 +1,5 @@
 import socket
-import tkinter as tk
-from tkinter import ttk
-from tkinter import Label
+socket.getaddrinfo('127.0.0.1',65432)
 from datetime import datetime
 
 buffer_size = 1024
@@ -9,21 +7,21 @@ buffer_size = 1024
 
 #Numero de días que he vivido (el alumno)
 def obtenerEdad():
-    limite_compara = datetime(2020,2,20) #Fecha limite para comparar cuanto tiempo ha vivido el alumno
+    limite_compara = datetime(2021,8,26) #Fecha limite para comparar cuanto tiempo ha vivido el alumno
     nacimiento = datetime(1998,11,19) #Fecha de nacimiento del alumno
     diferencia = nacimiento - limite_compara #El dato de los días vividos se devuelve como número con signo negativo
     posdif = -diferencia
-    print("Has vivido " + str(posdif.days))
+    print("Has vivido " + str(posdif.days) + " dias")
     print("Por lo tanto el juego que te toca es: ")
     dias = diferencia.days
     modulo = dias % 3
 
     if(modulo == 0):
-        print("Te toca buscaminas, por favor ingresa los datos solicitados para iniciar el juego")
+        print("Buscaminas, por favor ingresa los datos solicitados para iniciar el juego")
     elif (modulo == 1):
-        print("Te toca gato dummy, por favor ingresa los datos solicitados para iniciar el juego")
+        print("Gato dummy, por favor ingresa los datos solicitados para iniciar el juego")
     elif (modulo == 2):
-        print ("Te toca memoria, por favor ingresa los datos solicitados para iniciar el juego")
+        print ("Memoria, por favor ingresa los datos solicitados para iniciar el juego")
     else:
         print("Error")
 

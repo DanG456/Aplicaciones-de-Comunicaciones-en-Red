@@ -1,18 +1,17 @@
 import socket
 
-HOSTClient = "127.0.0.1"
-PORTClient = 65432
+HOST = "127.0.0.1"
+PORT = 65432
 buffer_size = 1024
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as TCPServerSocket:
-    TCPServerSocket.bind((HOSTClient, PORTClient))
+    TCPServerSocket.bind((HOST, PORT))
     TCPServerSocket.listen()
     print("El servidor TCP está disponible y en espera de solicitudes")
 
     Client_conn, Client_addr = TCPServerSocket.accept()
     with Client_conn:
         print("Conectado a", Client_addr)
-        dificultad = input("Elija la difucltad del juego: ")
         while True:
             print("Esperando a recibir datos... ")
             data = Client_conn.recv(buffer_size)

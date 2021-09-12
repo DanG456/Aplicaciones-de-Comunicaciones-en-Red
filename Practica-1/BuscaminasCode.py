@@ -31,23 +31,18 @@ def tablero1():
     if opcion:
         while True:
             print("que dificultad desea?")
-            print("\t1. facil.")
-            print("\t2. medio.")
-            print("\t3. dificil.")
-            print
-            opcion = input("elija una opcion(f o facil)(m o medio)(d o dificil): ")
-            if opcion.lower() == ("f" or "facil"):
-                tablero = matriz(15, 10)
-                minas(15, 10, tablero, 75)
-                return tablero, 15, 10
-            elif opcion.lower() == ("m" or "medio"):
-                tablero = matriz(25, 20)
-                minas(25, 20, tablero, 250)
-                return tablero, 25, 20
-            elif opcion.lower() == ("d" or "dificil"):
-                tablero = matriz(35, 30)
-                minas(35, 30, tablero, 525)
-                return tablero, 35, 30
+            print("\t1. principiante")
+            print("\t2. avanzado")
+
+            opcion = input("elija una opcion(p o principiante)(a o avanzado): ")
+            if opcion.lower() == ("p" or "principiante"):
+                tablero = matriz(9, 9)
+                minas(9, 9, tablero, 10)
+                return tablero, 9, 9
+            elif opcion.lower() == ("a" or "avanzado"):
+                tablero = matriz(16, 16)
+                minas(16, 16, tablero, 40)
+                return tablero, 16, 16
             else:
                 print("debe escoger una de las opciones del menu.")
     else:

@@ -27,18 +27,28 @@ def obtenerEdad():
 
 obtenerEdad()
 
-#
-HOST = input("Ingresa la direccion a la que te quieres conectar")
-PORT = input("Ingresa el puerto al que te quieres conectar")
+print("este es el clasico juego buscaminas.")
+print("el juego consiste en descubrir todas las fichas que no tengan minas(las cuales estan representadas por \"*\"")
+print("los numeros que aparecen en la pantalla indica cuantas bomas aparecen al rededor.")
+print("cuando aparece el numero 0 es porque no hay ninguna bomba al rededor.")
+print("para seleccionar la ficha a destapar tendra que especificar la fila y la columna.")
+print("que empieze el juego.")
+
+def modo():
+    opcion = input("quiere un juego aleatorio (si = 1)(no = 0): ")
+    TCPClientSocket.sendall(bytes(opcion, 'utf-8'))
+    print("Esperando una respuesta...")
+    data = TCPClientSocket.recv(buffer_size)
+    print("El servidor pregunta,", repr(data))
+    data = TCPClientSocket.recv(buffer_size)
+    print(repr(data))
+    opcion = input()
+    TCPClientSocket.sendall(bytes(opcion, 'utf-8'))
+
+HOST = input("Ingresa la direccion a la que te quieres conectar \n") #IP que usa el servidor
+PORT = input("Ingresa el puerto al que te quieres conectar\n") #Puerto que usa el servidor
 print("La direccion seleccionada es: " + HOST)
 print("El puerto seleccionado es: " + PORT)
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as TCPClientSocket:
     TCPClientSocket.connect((HOST, int(PORT)))
-    print("Enviando mensaje...")
-    TCPClientSocket.sendall(b"1")
-    print("Esperando una respuesta...")
-    data = TCPClientSocket.recv(buffer_size)
-    print("Recibido,", repr(data), " de", TCPClientSocket.getpeername())
-
-
-
+    modo()

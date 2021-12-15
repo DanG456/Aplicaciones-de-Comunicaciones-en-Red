@@ -1,7 +1,3 @@
-# Aplicaciones para comunicaciones en red
-# Autores:
-#         Martell Fuentes Ambar Desirée
-#         Mendoza Morales Aldo Daniel
 import socket
 import pickle
 import os

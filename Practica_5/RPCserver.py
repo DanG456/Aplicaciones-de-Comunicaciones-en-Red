@@ -79,7 +79,7 @@ with SimpleXMLRPCServer(('localhost', 8000),requestHandler=RequestHandler) as se
 
     server.register_instance(MyFuncs())
     try:
-        print ('Use Control-C to exit')
+        print ('Use Control-C para salir')
         server.serve_forever()
     except KeyboardInterrupt:
-        print ('Exiting')
+        print ('Saliendo')

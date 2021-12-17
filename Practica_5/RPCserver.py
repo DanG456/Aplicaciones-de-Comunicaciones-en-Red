@@ -10,7 +10,6 @@ class directorio(object):
     def __init__(self,):
         self.home='home/'
         self.gtw=self.home
-        #home='home/Novela Ligera'
     def getstw(self):
         return self.gtw
 
@@ -18,7 +17,7 @@ class directorio(object):
 logging.basicConfig(level=logging.DEBUG)
 class RequestHandler(SimpleXMLRPCRequestHandler):
     rpc_paths = ('/RPC2',)
-# Create server
+# Crear servidor
 with SimpleXMLRPCServer(('localhost', 8000),requestHandler=RequestHandler) as server:
     server.register_introspection_functions()
 
@@ -29,7 +28,6 @@ with SimpleXMLRPCServer(('localhost', 8000),requestHandler=RequestHandler) as se
         def __init__(self, ):
             self.home = 'home/'
             self.gtw = self.home
-            # home='home/Novela Ligera'
 
         def getstw(self):
             return self.gtw

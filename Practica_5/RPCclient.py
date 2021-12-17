@@ -1,18 +1,15 @@
 import xmlrpc.client
 import time
 import os
-#192.168.0.4
-#s = xmlrpc.client.ServerProxy('http://192.168.0.4:8000')
+
 s = xmlrpc.client.ServerProxy('http://localhost:8000')
 class directorio(object):
     def __init__(self,):
         self.home='home/'
         self.gtw=self.home
-        #home='home/Novela Ligera'
     def getstw(self):
         return self.gtw
     def cd(self,name):
-        #self.gtw = os.path.join(self.gtw,name)
         self.gtw = name
 
 d=directorio()
@@ -22,7 +19,6 @@ while True:
     C = input(str(d.getstw())+ ": ")
     print("\n")
     Comando = C.split(" ", 3)
-  #  print(str(Comando))
     if str(Comando[0]) in str(s.system.listMethods()):
 
         if str(Comando[0])=="create":

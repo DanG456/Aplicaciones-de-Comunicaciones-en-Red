@@ -161,8 +161,7 @@ def RecibirPregunta(conn, addr, condicionEsperarJugadores, condicionTurnoActivo,
             conn.sendall( str(conexiones - len(listaconexiones)).encode() )
             if( conexiones == len(listaconexiones) ):
                 print("Enviando inicio de juego")
-                break
-            #else: #Faltan str(conexiones - len(listaconexiones)).encode() jugadores 
+                break 
     
     tiro_anterior = ""
     while not JUEGO_TERMINADO:        

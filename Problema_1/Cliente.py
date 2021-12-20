@@ -68,7 +68,7 @@ def ObtenerMensajeVoz():
 def ObtenerCaracteristica(texto):
     texto = texto.lower()
     accesorios = ["nada", "lentes", "sombrero", "corbata"]  # "tu personaje tiene <accesorio>"
-    nombres = ["Carla", "Matilda", "Maria", "Samuel", "Eduardo", "Bob", "Patricio", "Jorge", "Jessica", "Camila",
+    nombres = ["Carla", "Matilda", "Maria", "Samuel", "Eduardo", "Bob", "Patricio", "Jorge", "Jessica", "Dulce",
                "Paulina"]  # "tu personaje es <genero_nombre>"
     generos = ["mujer", "hombre"]
 

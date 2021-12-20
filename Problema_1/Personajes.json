@@ -1,0 +1,8 @@
+{
+  "nombre": ["Carla","Matilda","Maria","Samuel","Eduardo", "Bob", "Patricio", "Jorge", "Jessica", "Dulce","Paulina"],
+  "cabello": ["Negro","Rubio","Rubio","Negro","Negro","Rubio","Rojo", "Rubio","Rojo","Negro","Rojo"],
+  "ojos": ["Cafes","Azules","Azules","Cafes","Azules","Azules","Cafes","Verdes","Verdes","Cafes","Azules"],
+  "piel": ["Blanca","Morena","Blanca","Morena","Blanca","Blanca","Morena","Morena","Blanca","Morena","Morena"],
+  "accesorio": ["Nada","Nada","Lentes","Nada","Sombrero","Corbata","Nada","Sombrero","Nada","Lentes","Sombrero"],
+  "genero": ["Mujer","Mujer","Mujer","Hombre","Hombre","Hombre","Hombre","Hombre","Mujer","Mujer","Mujer"]
+}
